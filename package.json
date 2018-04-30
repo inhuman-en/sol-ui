@@ -26,7 +26,11 @@
     "@angular/router": "5.2.10",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "@types/three": "^0.91.3",
+    "postprocessing": "^4.4.1",
+    "three": "^0.91.0",
+    "three-orbitcontrols-ts": "^0.1.2"
   },
   "devDependencies": {
     "@angular/cli": "1.6.5",
