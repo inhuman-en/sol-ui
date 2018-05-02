@@ -193,6 +193,14 @@ module.exports = {
                     }
                 },
                 {
+                  context: 'src/app/spacemap/assets',
+                  to: 'assets',
+                  from: {
+                      glob: '**/*',
+                      dot: true
+                  }
+              },
+                {
                     context: 'src',
                     to: '.',
                     from: {

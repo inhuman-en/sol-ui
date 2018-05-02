@@ -18,7 +18,7 @@ import { RenderPass, BloomPass, FilmPass, EffectComposer } from 'postprocessing'
 import { OrbitControls } from 'three-orbitcontrols-ts';
 import { starfield } from './objects';
 import * as Shaders from './shaders';
-window.onload = function() {
+export function init (el) {
     let scene = new Scene();
     let camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
@@ -27,7 +27,7 @@ window.onload = function() {
     let renderer = new WebGLRenderer({ antialias: true });
     renderer.setPixelRatio(window.devicePixelRatio);
 
-    document.body.appendChild(renderer.domElement);
+    el.appendChild(renderer.domElement);
 
     renderer.autoClear = false;
 
@@ -66,7 +66,7 @@ window.onload = function() {
     effectFilm.renderToScreen = true;
 
 
-    
+
     let composer = new EffectComposer(renderer);
 
     composer.addPass(renderModel);
@@ -77,7 +77,7 @@ window.onload = function() {
 
     controls.update();
 
-    let tanFOV = Math.tan(Math.PI / 180 * camera.fov / 2);    
+    let tanFOV = Math.tan(Math.PI / 180 * camera.fov / 2);
 
     let resize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
@@ -88,7 +88,7 @@ window.onload = function() {
         camera.updateProjectionMatrix();
         camera.lookAt(scene.position);
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth * 0.7, window.innerHeight * 0.7);
 
         // composer.reset();
     };
@@ -109,7 +109,7 @@ window.onload = function() {
         composer.render(0.01);
 
         controls.update();
-        
+
     };
 
     let animate = function() {
