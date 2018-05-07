@@ -21,8 +21,8 @@ module.exports = webpackMerge(commonConfig, {
             moduleFilenameTemplate: '[resource-path]',
             fallbackModuleFilenameTemplate: '[resource-path]?[hash]',
             sourceRoot: 'webpack:///'
-        }),
-        new BundleAnalyzerPlugin()
+        })
+        // new BundleAnalyzerPlugin()
     ],
     devServer: {
         historyApiFallback: true,

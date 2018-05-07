@@ -68,7 +68,7 @@ module.exports = {
                 }
             },
             {
-                exclude: [path.join(process.cwd(), 'src/styles/common.scss')],
+                exclude: [path.join(process.cwd(), 'src/styles.scss')],
                 test: /\.css$/,
                 use: [
                     'exports-loader?module.exports.toString()',
@@ -90,7 +90,7 @@ module.exports = {
                 ]
             },
             {
-                exclude: [path.join(process.cwd(), 'src/styles/common.scss')],
+                exclude: [path.join(process.cwd(), 'src/styles.scss')],
                 test: /\.scss$|\.sass$/,
                 use: [
                     'exports-loader?module.exports.toString()',
@@ -120,7 +120,7 @@ module.exports = {
                 ]
             },
             {
-                include: [path.join(process.cwd(), 'src/styles/common.scss')],
+                include: [path.join(process.cwd(), 'src/styles.scss')],
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract([
                     {
@@ -142,7 +142,7 @@ module.exports = {
                 ])
             },
             {
-                include: [path.join(process.cwd(), 'src/styles/common.scss')],
+                include: [path.join(process.cwd(), 'src/styles.scss')],
                 test: /\.scss$|\.sass$/,
                 use: ExtractTextPlugin.extract([
                     {
